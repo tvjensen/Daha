@@ -22,10 +22,13 @@ class MenuClass: UIViewController, UIViewControllerTransitioningDelegate {
         if let destinationViewController = segue.destination as? MenuViewController {
             destinationViewController.transitioningDelegate = self
             destinationViewController.interactor = interactor
+            let secondViewController = segue.destination as! MenuViewController
+            let selected = self.selected
+            secondViewController.selected = selected
         }
-        let secondViewController = segue.destination as! MenuViewController
-        let selected = self.selected
-        secondViewController.selected = selected
+//        let secondViewController = segue.destination as! MenuViewController
+//        let selected = self.selected
+//        secondViewController.selected = selected
     }
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {

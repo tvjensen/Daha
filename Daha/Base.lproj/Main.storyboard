@@ -431,16 +431,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Payment Information"/>
                                 <connections>
-                                    <segue destination="3qo-Jj-V6e" kind="presentation" id="U9o-ip-xME"/>
+                                    <segue destination="Eip-3o-BbH" kind="presentation" id="SCg-IQ-hNj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M2c-vH-RSD">
                                 <rect key="frame" x="60" y="180" width="255" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Profile"/>
-                                <connections>
-                                    <segue destination="pQW-oe-gx7" kind="presentation" id="IJt-dM-XIH"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -477,14 +474,6 @@
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zDd-7X-81R">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ROr-i1-gzf">
-                                        <rect key="frame" x="12" y="22" width="39" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Menu"/>
-                                        <connections>
-                                            <action selector="openMenu:" destination="ewy-8b-YwU" eventType="touchUpInside" id="biZ-Rr-3OR"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payment Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jr9-6n-u2T">
                                         <rect key="frame" x="108" y="26" width="159" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -535,7 +524,6 @@
                                         <rect key="frame" x="18" y="22" width="34" height="30"/>
                                         <state key="normal" title="Back"/>
                                         <connections>
-                                            <action selector="openMenu:" destination="ewy-8b-YwU" eventType="touchUpInside" id="0L8-iU-BG0"/>
                                             <segue destination="ewy-8b-YwU" kind="presentation" id="KDj-5P-mE8"/>
                                         </connections>
                                     </button>
@@ -810,9 +798,6 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pXF-6c-WV9">
                                         <rect key="frame" x="18" y="22" width="34" height="30"/>
                                         <state key="normal" title="Back"/>
-                                        <connections>
-                                            <segue destination="ewy-8b-YwU" kind="presentation" id="T4o-f8-JAH"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.8912609816" green="0.35455638169999998" blue="0.39968371390000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -841,6 +826,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="b2a-cT-Pj9"/>
+        <segue reference="Whf-Wq-VYc"/>
+        <segue reference="KDj-5P-mE8"/>
     </inferredMetricsTieBreakers>
 </document>

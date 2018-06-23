@@ -23,6 +23,7 @@
 		52D4A8A120DDB88C00D0E362 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D4A8A020DDB88C00D0E362 /* MenuViewController.swift */; };
 		52D4A8A320DDBCB000D0E362 /* DismissMenuAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D4A8A220DDBCB000D0E362 /* DismissMenuAnimator.swift */; };
 		52D4A8A720DDD61500D0E362 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D4A8A620DDD61500D0E362 /* CategoriesViewController.swift */; };
+		D1C6C34220DEED2B00F3B041 /* PaymentInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C6C34120DEED2B00F3B041 /* PaymentInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		52D4A8A020DDB88C00D0E362 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		52D4A8A220DDBCB000D0E362 /* DismissMenuAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissMenuAnimator.swift; sourceTree = "<group>"; };
 		52D4A8A620DDD61500D0E362 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
+		D1C6C34120DEED2B00F3B041 /* PaymentInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				52B15FCD20DDE28F0004FBF1 /* NotificationsViewController.swift */,
 				52B15FCF20DDE29E0004FBF1 /* HistoryViewController.swift */,
 				52B15FD120DDE2AB0004FBF1 /* SettingsViewController.swift */,
+				D1C6C34120DEED2B00F3B041 /* PaymentInfoViewController.swift */,
 			);
 			path = Daha;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				52D4A8A320DDBCB000D0E362 /* DismissMenuAnimator.swift in Sources */,
 				52D4A89D20DD958700D0E362 /* PresentMenuAnimator.swift in Sources */,
 				52D4A89B20DD94D300D0E362 /* MenuHelper.swift in Sources */,
+				D1C6C34220DEED2B00F3B041 /* PaymentInfoViewController.swift in Sources */,
 				52B15FCE20DDE28F0004FBF1 /* NotificationsViewController.swift in Sources */,
 				52B15FD220DDE2AB0004FBF1 /* SettingsViewController.swift in Sources */,
 				52D4A8A720DDD61500D0E362 /* CategoriesViewController.swift in Sources */,

@@ -22,10 +22,12 @@ class HistoryViewController: MenuClass {
     }
     
     @IBAction func openMenu(_ sender: Any) {
+        setMenuClassSelected(sel: "history")
         self.performSegue(withIdentifier: "openMenuFromHistory", sender: nil)
     }
     
     @IBAction func edgePanGesture(sender: UIScreenEdgePanGestureRecognizer) {
+        setMenuClassSelected(sel: "history")
         let translation = sender.translation(in: view)
         
         let progress = MenuHelper.calculateProgress(translationInView: translation, viewBounds: view.bounds, direction: .Right)

@@ -34,27 +34,30 @@
                                             <action selector="openMenu:" destination="f9K-mr-yKR" eventType="touchUpInside" id="NHF-DK-npJ"/>
                                         </connections>
                                     </button>
-                                    <searchBar contentMode="redraw" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PbM-cn-6B7">
-                                        <rect key="frame" x="0.0" y="52" width="375" height="56"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="f9K-mr-yKR" id="Zsy-3C-4Rn"/>
-                                        </connections>
-                                    </searchBar>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search Items" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUM-4U-UbI">
                                         <rect key="frame" x="137" y="26" width="100" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <searchBar contentMode="redraw" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PbM-cn-6B7">
+                                        <rect key="frame" x="0.0" y="52" width="375" height="56"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="f9K-mr-yKR" id="Zsy-3C-4Rn"/>
+                                        </connections>
+                                    </searchBar>
                                 </subviews>
                                 <color key="backgroundColor" red="0.8912609816" green="0.35455638169999998" blue="0.39968371390000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="PbM-cn-6B7" firstAttribute="leading" secondItem="kTb-aG-fMH" secondAttribute="leading" id="54K-nO-sTA"/>
                                     <constraint firstItem="cUM-4U-UbI" firstAttribute="centerX" secondItem="kTb-aG-fMH" secondAttribute="centerX" id="9Gp-MC-6Dq"/>
-                                    <constraint firstItem="PbM-cn-6B7" firstAttribute="top" secondItem="cUM-4U-UbI" secondAttribute="bottom" constant="5" id="KMU-5Z-SJ3"/>
+                                    <constraint firstAttribute="trailing" secondItem="PbM-cn-6B7" secondAttribute="trailing" id="JdX-KK-SK2"/>
                                     <constraint firstAttribute="height" constant="105" id="OfC-Ge-jzM"/>
                                     <constraint firstItem="cUM-4U-UbI" firstAttribute="top" secondItem="kTb-aG-fMH" secondAttribute="top" constant="26" id="fdy-g1-iZs"/>
+                                    <constraint firstItem="PbM-cn-6B7" firstAttribute="top" secondItem="cUM-4U-UbI" secondAttribute="bottom" constant="5" id="hku-p2-ikk"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -100,7 +103,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1444" y="-484"/>
+            <point key="canvasLocation" x="1444" y="-484.40779610194909"/>
         </scene>
         <!--Categories View Controller-->
         <scene sceneID="MMD-0o-sDC">
@@ -122,7 +125,7 @@
                                             <segue destination="4HB-UD-GxK" kind="presentation" identifier="openMenuFromCategories" id="8Mz-77-T25"/>
                                         </connections>
                                     </button>
-                                    <searchBar contentMode="redraw" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K5Z-uQ-O8s">
+                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="K5Z-uQ-O8s">
                                         <rect key="frame" x="0.0" y="52" width="375" height="56"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -139,8 +142,10 @@
                                 <color key="backgroundColor" red="0.8912609816" green="0.35455638169999998" blue="0.39968371390000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="K5Z-uQ-O8s" secondAttribute="trailing" id="65P-w1-w52"/>
                                     <constraint firstItem="etD-Zx-L6f" firstAttribute="top" secondItem="iJL-gF-HhN" secondAttribute="top" constant="26" id="Bdv-Fu-Tbv"/>
                                     <constraint firstAttribute="height" constant="105" id="ORJ-gY-VX0"/>
+                                    <constraint firstItem="K5Z-uQ-O8s" firstAttribute="leading" secondItem="iJL-gF-HhN" secondAttribute="leading" id="SLp-nL-cJs"/>
                                     <constraint firstItem="etD-Zx-L6f" firstAttribute="centerX" secondItem="iJL-gF-HhN" secondAttribute="centerX" id="nT6-Qs-Ma7"/>
                                     <constraint firstItem="K5Z-uQ-O8s" firstAttribute="top" secondItem="etD-Zx-L6f" secondAttribute="bottom" constant="5" id="rcg-g2-7Yv"/>
                                 </constraints>
@@ -189,7 +194,7 @@
                                             <segue destination="4HB-UD-GxK" kind="presentation" identifier="openMenuFromMyItems" id="b2a-cT-Pj9"/>
                                         </connections>
                                     </button>
-                                    <searchBar contentMode="redraw" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L0Y-8G-hbK">
+                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="L0Y-8G-hbK">
                                         <rect key="frame" x="0.0" y="52" width="375" height="56"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -207,9 +212,11 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="105" id="8v5-lP-jhB"/>
+                                    <constraint firstAttribute="trailing" secondItem="L0Y-8G-hbK" secondAttribute="trailing" id="PiM-Eb-gpr"/>
                                     <constraint firstItem="L0Y-8G-hbK" firstAttribute="top" secondItem="MIU-Bf-bal" secondAttribute="bottom" constant="5" id="iCf-6f-XCg"/>
                                     <constraint firstItem="MIU-Bf-bal" firstAttribute="centerX" secondItem="lpU-kz-8GO" secondAttribute="centerX" id="lnT-Qr-Cjy"/>
                                     <constraint firstItem="MIU-Bf-bal" firstAttribute="top" secondItem="lpU-kz-8GO" secondAttribute="top" constant="26" id="uPw-qJ-lFY"/>
+                                    <constraint firstItem="L0Y-8G-hbK" firstAttribute="leading" secondItem="lpU-kz-8GO" secondAttribute="leading" id="wQw-Yu-LCN"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -221,13 +228,16 @@
                             <constraint firstItem="lpU-kz-8GO" firstAttribute="trailing" secondItem="MU0-iH-TbT" secondAttribute="trailing" id="w0p-KY-pEk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MU0-iH-TbT"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Jao-mk-1NW" appends="YES" id="WBo-lX-lto"/>
+                        </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2nx-6j-baN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="Rrr-SE-3Y6">
+                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="Jao-mk-1NW">
                     <rectEdge key="edges" left="YES"/>
                     <connections>
-                        <action selector="edgePanGestureWithSender:" destination="sSV-VV-jYJ" id="y20-ye-XA3"/>
+                        <action selector="edgePanGestureWithSender:" destination="sSV-VV-jYJ" id="5lc-eK-W1P"/>
                     </connections>
                 </screenEdgePanGestureRecognizer>
             </objects>
@@ -253,7 +263,7 @@
                                             <segue destination="4HB-UD-GxK" kind="presentation" identifier="openMenuFromNotifications" id="tgT-tS-eUA"/>
                                         </connections>
                                     </button>
-                                    <searchBar contentMode="redraw" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x9B-fa-HTD">
+                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="x9B-fa-HTD">
                                         <rect key="frame" x="0.0" y="52" width="375" height="56"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -272,7 +282,9 @@
                                 <constraints>
                                     <constraint firstItem="eSP-mb-CcY" firstAttribute="centerX" secondItem="gi9-G6-dYt" secondAttribute="centerX" id="6dJ-6A-Z7o"/>
                                     <constraint firstAttribute="height" constant="105" id="M1U-Di-OYj"/>
+                                    <constraint firstItem="x9B-fa-HTD" firstAttribute="leading" secondItem="gi9-G6-dYt" secondAttribute="leading" id="QN4-Lr-V2K"/>
                                     <constraint firstItem="x9B-fa-HTD" firstAttribute="top" secondItem="eSP-mb-CcY" secondAttribute="bottom" constant="5" id="i0j-Jo-a6G"/>
+                                    <constraint firstAttribute="trailing" secondItem="x9B-fa-HTD" secondAttribute="trailing" id="n80-46-qpm"/>
                                     <constraint firstItem="eSP-mb-CcY" firstAttribute="top" secondItem="gi9-G6-dYt" secondAttribute="top" constant="26" id="sl8-bP-UNO"/>
                                 </constraints>
                             </view>
@@ -320,7 +332,7 @@
                                             <segue destination="4HB-UD-GxK" kind="presentation" identifier="openMenuFromHistory" id="N6z-Ak-LPH"/>
                                         </connections>
                                     </button>
-                                    <searchBar contentMode="redraw" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ghN-A9-FMm">
+                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="ghN-A9-FMm">
                                         <rect key="frame" x="0.0" y="52" width="375" height="56"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -337,6 +349,8 @@
                                 <color key="backgroundColor" red="0.8912609816" green="0.35455638169999998" blue="0.39968371390000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="ghN-A9-FMm" firstAttribute="leading" secondItem="sgD-Ab-V5f" secondAttribute="leading" id="19n-rk-vwT"/>
+                                    <constraint firstAttribute="trailing" secondItem="ghN-A9-FMm" secondAttribute="trailing" id="5ho-Gx-XaZ"/>
                                     <constraint firstAttribute="height" constant="105" id="Pej-LA-UYV"/>
                                     <constraint firstItem="rYl-RZ-Int" firstAttribute="top" secondItem="sgD-Ab-V5f" secondAttribute="top" constant="26" id="S26-uj-Fqe"/>
                                     <constraint firstItem="ghN-A9-FMm" firstAttribute="top" secondItem="rYl-RZ-Int" secondAttribute="bottom" constant="5" id="VNn-fQ-70z"/>
@@ -387,7 +401,7 @@
                                             <segue destination="4HB-UD-GxK" kind="presentation" identifier="openMenuFromSettings" id="Whf-Wq-VYc"/>
                                         </connections>
                                     </button>
-                                    <searchBar contentMode="redraw" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Li6-Vk-wKG">
+                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Li6-Vk-wKG">
                                         <rect key="frame" x="0.0" y="52" width="375" height="56"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -405,9 +419,11 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="bID-M3-CNP" firstAttribute="top" secondItem="u8B-Sa-djf" secondAttribute="top" constant="26" id="2vB-DJ-m5G"/>
+                                    <constraint firstAttribute="trailing" secondItem="Li6-Vk-wKG" secondAttribute="trailing" id="8ma-eQ-I4z"/>
                                     <constraint firstItem="bID-M3-CNP" firstAttribute="centerX" secondItem="u8B-Sa-djf" secondAttribute="centerX" id="KhJ-VM-IIa"/>
                                     <constraint firstItem="Li6-Vk-wKG" firstAttribute="top" secondItem="bID-M3-CNP" secondAttribute="bottom" constant="5" id="P5b-Zm-Wpe"/>
                                     <constraint firstAttribute="height" constant="105" id="igI-gR-7wY"/>
+                                    <constraint firstItem="Li6-Vk-wKG" firstAttribute="leading" secondItem="u8B-Sa-djf" secondAttribute="leading" id="sYo-ZA-IIb"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -614,6 +630,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Whf-Wq-VYc"/>
+        <segue reference="b2a-cT-Pj9"/>
     </inferredMetricsTieBreakers>
 </document>

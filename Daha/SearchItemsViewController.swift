@@ -11,10 +11,12 @@ import UIKit
 class SearchItemsViewController: MenuClass {
         
     @IBAction func openMenu(_ sender: Any) {
+        setMenuClassSelected(sel: "search")
         performSegue(withIdentifier: "openMenuFromSearchItems", sender: nil)
     }
     
     @IBAction func edgePanGesture(sender: UIScreenEdgePanGestureRecognizer) {
+        setMenuClassSelected(sel: "search")
         let translation = sender.translation(in: view)
         
         let progress = MenuHelper.calculateProgress(translationInView: translation, viewBounds: view.bounds, direction: .Right)

@@ -11,6 +11,7 @@ import Foundation
 
 class MenuViewController: UIViewController {
     
+    var selected = "search"
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var searchItemsButton: UIButton!
@@ -21,8 +22,34 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var settingsButton: UIButton!
     
     override func viewDidLoad() {
-        searchItemsButton.isSelected = true
+        setSelected()
     }
+    
+    func setSelected() {
+        switch selected {
+        case "search":
+            searchItemsButton.isSelected = true
+            break
+        case "categories":
+            categoriesButton.isSelected = true
+            break
+        case "myItems":
+            myItemsButton.isSelected = true
+            break
+        case "notifications":
+            notificationsButton.isSelected = true
+            break
+        case "history":
+            historyButton.isSelected = true
+            break
+        case "settings":
+            settingsButton.isSelected = true
+            break
+        default:
+            break
+        }
+    }
+    
     
     
     var interactor:Interactor? = nil

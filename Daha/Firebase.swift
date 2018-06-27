@@ -77,5 +77,16 @@ class Firebase {
         }
     }
     
+    public static func resetPassword(email: String, callback: @escaping (Bool) -> Void) {
+        Auth.auth().sendPasswordReset(withEmail: email) { error in
+            if error != nil {
+                print(error?.localizedDescription)
+                callback(false)
+            } else {
+                callback(true)
+            }
+        }
+    }
+    
     
 }

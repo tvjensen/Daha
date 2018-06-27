@@ -17,7 +17,7 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var userName: UIButton!
     @IBOutlet weak var searchItemsButton: UIButton!
     @IBOutlet weak var categoriesButton: UIButton!
-    @IBOutlet weak var myItemsButton: UIButton!
+    @IBOutlet weak var myProfileButton: UIButton!
     @IBOutlet weak var notificationsButton: UIButton!
     @IBOutlet weak var historyButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!
@@ -35,7 +35,7 @@ class MenuViewController: UIViewController {
             categoriesButton.isSelected = true
             break
         case "myProfile":
-            myItemsButton.isSelected = true
+            myProfileButton.isSelected = true
             break
         case "notifications":
             notificationsButton.isSelected = true

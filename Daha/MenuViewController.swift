@@ -12,8 +12,9 @@ import Foundation
 class MenuViewController: UIViewController {
     
     var selected = "search"
-    @IBOutlet weak var userName: UILabel!
-    @IBOutlet weak var userImage: UIImageView!
+    
+    @IBOutlet weak var userImage: UIButton!
+    @IBOutlet weak var userName: UIButton!
     @IBOutlet weak var searchItemsButton: UIButton!
     @IBOutlet weak var categoriesButton: UIButton!
     @IBOutlet weak var myItemsButton: UIButton!

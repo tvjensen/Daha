@@ -8,16 +8,22 @@
 
 import UIKit
 import Firebase
+import ChameleonFramework
 
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var emailLogin: UITextField!
     @IBOutlet weak var passwordLogin: UITextField!
     
+    @IBOutlet weak var forgotPasswordButton: UIButton!
+    @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var loginButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        forgotPasswordButton.titleLabel?.textAlignment = NSTextAlignment.center
+        self.view.backgroundColor = UIColor.flatWatermelon
         passwordLogin.isSecureTextEntry = true
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,7 +44,7 @@ class LoginViewController: UIViewController {
 
                     let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                     alertController.addAction(defaultAction)
-//                    alertController.view.tintColor = UIColor.flatMint
+                    alertController.view.tintColor = UIColor.flatWatermelonDark
                     self.present(alertController, animated: true, completion: nil)
                 }
             }
@@ -47,7 +53,7 @@ class LoginViewController: UIViewController {
 
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
-//            alertController.view.tintColor = UIColor.flatMint
+            alertController.view.tintColor = UIColor.flatWatermelonDark
 
             self.present(alertController, animated: true, completion: nil)
         }
@@ -61,34 +67,41 @@ class LoginViewController: UIViewController {
                 let alertController = UIAlertController(title: "Success", message: "You have been sent an email confirmation link. Please confirm your email to login.", preferredStyle: .alert)
                 let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                 alertController.addAction(defaultAction)
-//                alertController.view.tintColor = UIColor.flatMint
+                alertController.view.tintColor = UIColor.flatWatermelonDark
                 self.present(alertController, animated: true, completion: nil)
 //                SessionManager.storeSession(session: emailLoginText)
             } else { // an error occurred, could not successfully register
                 let alertController = UIAlertController(title: "Error", message: "An error occurred while registering. Please make sure your password is at least 6 characters long or please try again later.", preferredStyle: .alert)
                 let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                 alertController.addAction(defaultAction)
-//                alertController.view.tintColor = UIColor.flatMint
+                alertController.view.tintColor = UIColor.flatWatermelonDark
                 self.present(alertController, animated: true, completion: nil)
             }
         }
     }
     
-    
-    
-    static func isValidEmail(_ email: String) -> Bool {
-//        let emailPattern = "[A-Z0-9a-z._%+-]+@stanford\\.edu"
-//        return NSPredicate(format: "SELF MATCHES %@", emailPattern).evaluate(with:email.lowercased())
-        return true
+    @IBAction func forgotPassword(_ sender: Any) {
+        let alertError = UIAlertController(title: "Something went wrong", message: "We were unable to send your reset email. Please make sure your email is associated with an exisiting account and that you entered your email correctly.", preferredStyle: UIAlertControllerStyle.alert)
+        alertError.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: { [weak alertError] (_) in
+        }))
+        alertError.view.tintColor = UIColor.flatWatermelonDark
+        
+        let alert = UIAlertController(title: "Forgot Password", message: "We can reset your password and send an email to you with further instructions.", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addTextField(configurationHandler: {(textField: UITextField!) in
+            textField.placeholder = "Your email"
+        })
+        alert.addAction(UIAlertAction(title: "Send email", style: UIAlertActionStyle.default, handler: { [weak alert] (_) in
+            Firebase.resetPassword(email: (alert?.textFields![0].text)!) { (success) in
+                if (!success) {
+                    print("Error reseting password", success)
+                    self.present(alertError, animated: true, completion: nil)
+                }
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "Nevermind", style: UIAlertActionStyle.default, handler: { [weak alert] (_) in
+        }))
+        alert.view.tintColor = UIColor.flatWatermelonDark
+        
+        self.present(alert, animated: true, completion: nil)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

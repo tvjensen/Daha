@@ -22,10 +22,12 @@ class NotificationsViewController: MenuClass {
     }
     
     @IBAction func openMenu(_ sender: Any) {
+        setMenuClassSelected(sel: "notifications")
         self.performSegue(withIdentifier: "openMenuFromNotifications", sender: nil)
     }
     
     @IBAction func edgePanGesture(sender: UIScreenEdgePanGestureRecognizer) {
+        setMenuClassSelected(sel: "notifications")
         let translation = sender.translation(in: view)
         
         let progress = MenuHelper.calculateProgress(translationInView: translation, viewBounds: view.bounds, direction: .Right)

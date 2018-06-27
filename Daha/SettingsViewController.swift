@@ -22,10 +22,12 @@ class SettingsViewController: MenuClass {
     }
     
     @IBAction func openMenu(_ sender: Any) {
+        setMenuClassSelected(sel: "settings")
         self.performSegue(withIdentifier: "openMenuFromSettings", sender: nil)
     }
     
     @IBAction func edgePanGesture(sender: UIScreenEdgePanGestureRecognizer) {
+        setMenuClassSelected(sel: "settings")
         let translation = sender.translation(in: view)
         
         let progress = MenuHelper.calculateProgress(translationInView: translation, viewBounds: view.bounds, direction: .Right)

@@ -9,7 +9,7 @@
 import UIKit
 
 class CategoriesViewController: MenuClass {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,10 +22,13 @@ class CategoriesViewController: MenuClass {
     }
     
     @IBAction func openMenu(_ sender: Any) {
+        setMenuClassSelected(sel: "categories")
         self.performSegue(withIdentifier: "openMenuFromCategories", sender: nil)
     }
     
-    @IBAction func edgePanGesture(sender: UIScreenEdgePanGestureRecognizer) {
+    @IBAction func edgePanGesture(sender:
+        UIScreenEdgePanGestureRecognizer) {
+        setMenuClassSelected(sel: "categories")
         let translation = sender.translation(in: view)
         
         let progress = MenuHelper.calculateProgress(translationInView: translation, viewBounds: view.bounds, direction: .Right)
@@ -37,4 +40,14 @@ class CategoriesViewController: MenuClass {
                 self.performSegue(withIdentifier: "openMenuFromCategories", sender: nil)
         }
     }
+    
+    
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if (segue.identifier == "openMenuFromCategories") {
+//            let secondViewController = segue.destination as! MenuViewController
+//            let selected = self.selected
+//            secondViewController.selected = selected
+//        }
+//    }
 }

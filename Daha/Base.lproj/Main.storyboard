@@ -322,10 +322,10 @@
             </objects>
             <point key="canvasLocation" x="1444" y="212"/>
         </scene>
-        <!--My Items View Controller-->
+        <!--My Profile View Controller-->
         <scene sceneID="rQY-G6-Ldv">
             <objects>
-                <viewController id="sSV-VV-jYJ" customClass="MyItemsViewController" customModule="Daha" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="sSV-VV-jYJ" customClass="MyProfileViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eLz-Iv-Lbi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -338,11 +338,11 @@
                                         <state key="normal" title="Menu"/>
                                         <connections>
                                             <action selector="openMenu:" destination="sSV-VV-jYJ" eventType="touchUpInside" id="3YE-VJ-7tF"/>
-                                            <segue destination="4HB-UD-GxK" kind="presentation" identifier="openMenuFromMyItems" id="b2a-cT-Pj9"/>
+                                            <segue destination="4HB-UD-GxK" kind="presentation" identifier="openMenuFromMyProfile" id="b2a-cT-Pj9"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Items" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MIU-Bf-bal">
-                                        <rect key="frame" x="152" y="44" width="70" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MIU-Bf-bal">
+                                        <rect key="frame" x="149" y="44" width="76.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -761,7 +761,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YB9-y1-IGZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2166" y="3746"/>
+            <point key="canvasLocation" x="3374" y="1821"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="aZw-HL-uNb">
@@ -807,7 +807,7 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="My Items">
+                                <state key="normal" title="My Profile">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -973,7 +973,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="9gR-YO-yJ4"/>
+        <segue reference="b2a-cT-Pj9"/>
         <segue reference="IBr-vw-1gf"/>
         <segue reference="KDj-5P-mE8"/>
         <segue reference="dyF-C1-G2v"/>

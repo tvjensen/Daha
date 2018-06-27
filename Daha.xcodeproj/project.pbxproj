@@ -11,7 +11,7 @@
 		5237644120E31CE300B472CD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5237644020E31CE300B472CD /* LoginViewController.swift */; };
 		5237644320E31F6B00B472CD /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5237644220E31F6B00B472CD /* Firebase.swift */; };
 		52B15FCA20DDDF8C0004FBF1 /* MenuClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B15FC920DDDF8C0004FBF1 /* MenuClass.swift */; };
-		52B15FCC20DDE27D0004FBF1 /* MyItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B15FCB20DDE27D0004FBF1 /* MyItemsViewController.swift */; };
+		52B15FCC20DDE27D0004FBF1 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B15FCB20DDE27D0004FBF1 /* MyProfileViewController.swift */; };
 		52B15FCE20DDE28F0004FBF1 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B15FCD20DDE28F0004FBF1 /* NotificationsViewController.swift */; };
 		52B15FD020DDE29E0004FBF1 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B15FCF20DDE29E0004FBF1 /* HistoryViewController.swift */; };
 		52B15FD220DDE2AB0004FBF1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B15FD120DDE2AB0004FBF1 /* SettingsViewController.swift */; };
@@ -34,7 +34,7 @@
 		5237644020E31CE300B472CD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5237644220E31F6B00B472CD /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
 		52B15FC920DDDF8C0004FBF1 /* MenuClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuClass.swift; sourceTree = "<group>"; };
-		52B15FCB20DDE27D0004FBF1 /* MyItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyItemsViewController.swift; sourceTree = "<group>"; };
+		52B15FCB20DDE27D0004FBF1 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		52B15FCD20DDE28F0004FBF1 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		52B15FCF20DDE29E0004FBF1 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		52B15FD120DDE2AB0004FBF1 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -111,7 +111,7 @@
 				52D4A8A220DDBCB000D0E362 /* DismissMenuAnimator.swift */,
 				52D4A8A620DDD61500D0E362 /* CategoriesViewController.swift */,
 				52B15FC920DDDF8C0004FBF1 /* MenuClass.swift */,
-				52B15FCB20DDE27D0004FBF1 /* MyItemsViewController.swift */,
+				52B15FCB20DDE27D0004FBF1 /* MyProfileViewController.swift */,
 				52B15FCD20DDE28F0004FBF1 /* NotificationsViewController.swift */,
 				52B15FCF20DDE29E0004FBF1 /* HistoryViewController.swift */,
 				52B15FD120DDE2AB0004FBF1 /* SettingsViewController.swift */,
@@ -272,7 +272,7 @@
 				52D4A88320DD92C300D0E362 /* AppDelegate.swift in Sources */,
 				52D4A89920DD949900D0E362 /* Interactor.swift in Sources */,
 				52B15FD020DDE29E0004FBF1 /* HistoryViewController.swift in Sources */,
-				52B15FCC20DDE27D0004FBF1 /* MyItemsViewController.swift in Sources */,
+				52B15FCC20DDE27D0004FBF1 /* MyProfileViewController.swift in Sources */,
 				52D4A8A120DDB88C00D0E362 /* MenuViewController.swift in Sources */,
 				52D4A8A320DDBCB000D0E362 /* DismissMenuAnimator.swift in Sources */,
 				52D4A89D20DD958700D0E362 /* PresentMenuAnimator.swift in Sources */,
@@ -429,7 +429,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9RTJ28U92J;
 				INFOPLIST_FILE = Daha/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = tvjensen.Daha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -445,7 +448,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9RTJ28U92J;
 				INFOPLIST_FILE = Daha/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = tvjensen.Daha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

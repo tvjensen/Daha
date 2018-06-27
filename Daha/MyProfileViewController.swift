@@ -1,5 +1,5 @@
 //
-//  MyItemsViewController.swift
+//  MyProfileViewController.swift
 //  Daha
 //
 //  Created by Thomas Jensen on 6/22/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyItemsViewController: MenuClass {
+class MyProfileViewController: MenuClass {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,13 +22,13 @@ class MyItemsViewController: MenuClass {
     }
     
     @IBAction func openMenu(_ sender: Any) {
-        setMenuClassSelected(sel: "myItems")
-        self.performSegue(withIdentifier: "openMenuFromMyItems", sender: nil)
+        setMenuClassSelected(sel: "myProfile")
+        self.performSegue(withIdentifier: "openMenuFromMyProfile", sender: nil)
     }
     
     
     @IBAction func edgePanGesture(sender: UIScreenEdgePanGestureRecognizer) {
-        setMenuClassSelected(sel: "myItems")
+        setMenuClassSelected(sel: "myProfile")
         let translation = sender.translation(in: view)
         
         let progress = MenuHelper.calculateProgress(translationInView: translation, viewBounds: view.bounds, direction: .Right)
@@ -37,7 +37,7 @@ class MyItemsViewController: MenuClass {
             gestureState: sender.state,
             progress: progress,
             interactor: interactor){
-                self.performSegue(withIdentifier: "openMenuFromMyItems", sender: nil)
+                self.performSegue(withIdentifier: "openMenuFromMyProfile", sender: nil)
         }
     }
 }

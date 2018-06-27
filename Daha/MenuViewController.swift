@@ -34,7 +34,7 @@ class MenuViewController: UIViewController {
         case "categories":
             categoriesButton.isSelected = true
             break
-        case "myItems":
+        case "myProfile":
             myItemsButton.isSelected = true
             break
         case "notifications":

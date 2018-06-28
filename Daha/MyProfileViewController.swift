@@ -18,29 +18,24 @@ class MyProfileViewController: MenuClass {
     @IBOutlet weak var yourItemsLabel: UILabel!
     
     @IBAction func saveInfo(_ sender: Any) {
-        // TODO
-//        if usernameUnique() {
-//            if firstNameField.text != Current.user.firstName && lastNameField.text != Current.user.lastName && usernameField.text != Current.user.username {
-//                var updatedUser = Current.user
-//                updatedUser.firstName = firstNameField.text
-//                updatedUser.lastName = lastNameField.text
-//                updatedUser.username = usernameField.text
-//                updatedUser.image = userImage.currentBackgroundImage
-//                Firebase.saveUser(updatedUser)
-//            }
-//        } else {
-//
-//        }
-
+        if firstNameField.text != Current.user?.firstName || lastNameField.text != Current.user?.lastName {
+            print("save hit")
+            var updatedUser = Current.user
+            updatedUser?.firstName = firstNameField.text!
+            updatedUser?.lastName = lastNameField.text!
+//            updatedUser.username = usernameField.text
+//            updatedUser.image = userImage.currentBackgroundImage
+            Firebase.updateCurrentUser(user: updatedUser!)
+        }
     }
-    
-    
-    
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        firstNameField.text = Current.user?.firstName
+        lastNameField.text = Current.user?.lastName
+        
+        
         //Configure the button
         filterButton = dropDownBtn.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         filterButton.setTitle("Filter By", for: .normal)

@@ -23,6 +23,7 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var settingsButton: UIButton!
     
     override func viewDidLoad() {
+        userName.setTitle((Current.user?.firstName)! + " " + (Current.user?.lastName)!, for: .normal)
         setSelected()
     }
     

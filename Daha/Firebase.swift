@@ -15,6 +15,7 @@ class Firebase {
     // use this to interact with db
     private static let ref = Database.database().reference()
     private static let usersRef = ref.child("users")
+    private static let activitiesRef = ref.child("activities")
     
     private static var currentTime: Double {
         return Double(NSDate().timeIntervalSince1970)
@@ -101,15 +102,10 @@ class Firebase {
         }
     }
     
-//    public static func checkUsernameUnique(username: String, callback: @escaping (Bool) -> Void) {
-//        usersRef.child("\(username)").observeSingleEvent(of: .value, with: {(snapshot: DataSnapshot) in
-//            if snapshot.exists() {
-//                callback(true)
-//            } else {
-//                callback(false)
-//            }
-//        })
-//    }
+    //TODO - user 'activityRef' defined above
+    public static func saveActivity(activity: Models.Activity) {
+        
+    }
     
     
 }

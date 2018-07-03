@@ -50,7 +50,7 @@ class Models {
         }
     }
     
-    struct postedItem {
+    struct PostedItem {
         var itemID: String
         var posterEmail: String
         var title: String
@@ -78,7 +78,7 @@ class Models {
 //        }
     }
     
-    struct postedRequest {
+    struct PostedRequest {
         var requestID: String
         var posterEmail: String
         var title: String
@@ -97,6 +97,34 @@ class Models {
             self.requestID = requestID
             self.posterEmail = dict["posterEmail"] as! String
             self.title = dict["title"] as! String
+        }
+    }
+    
+    struct Activity {
+        var activityID: String
+        var time: Double
+        var type: String // postReq / removeReq / postItem / removeItem / sentReq / borrowed / returned
+        var email: String
+        var otherUserEmail: String
+//        var image:  //TODO once i get around to figuring out images
+        
+        var firebaseDict: [String : Any] {
+            let dict: [String : Any] = [
+                "time": self.time,
+                "type": self.type,
+                "email": self.email,
+                "otherUserEmail": self.otherUserEmail
+            ]
+            return dict
+        }
+        
+        init?(dict: [String: Any?]) {
+            guard let activityID = dict["activityID"] as? String else { return nil }
+            self.activityID = activityID
+            self.time = dict["time"] as! Double
+            self.type = dict["type"] as! String
+            self.email = dict["email"] as! String
+            self.otherUserEmail = dict["otherUserEmail"] as! String
         }
     }
 }

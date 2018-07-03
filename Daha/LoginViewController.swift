@@ -40,7 +40,7 @@ class LoginViewController: UIViewController {
                     print("Success in logging in user!")
                     self.performSegue(withIdentifier: "successfulLogin", sender: nil)
                 } else { // failed to login because of invalid user or password
-                    let alertController = UIAlertController(title: "Error", message: "Invalid email or password. Please confirm your email if you have not confirmed already.", preferredStyle: .alert)
+                    let alertController = UIAlertController(title: "Error", message: "Unrecognized username or password. Please check your email to verify your registration if you have not already.", preferredStyle: .alert)
 
                     let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                     alertController.addAction(defaultAction)
@@ -49,7 +49,7 @@ class LoginViewController: UIViewController {
                 }
             }
         } else { // invalid text entry. TODO: change this to floating sky text or whatever
-            let alertController = UIAlertController(title: "Error", message: "Please enter a valid email and password.", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Error", message: "Please enter a valid username and password.", preferredStyle: .alert)
 
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
@@ -59,26 +59,26 @@ class LoginViewController: UIViewController {
         }
     }
     
-    @IBAction func signUpUser(_ sender: Any) {
-        let emailLoginText : String = emailLogin.text!
-        let passwordLoginText : String = passwordLogin.text!
-        Firebase.registerUser(emailLoginText, passwordLoginText) { success in
-            if success { // successfully registered user, let them know to confirm email
-                let alertController = UIAlertController(title: "Success", message: "You have been sent an email confirmation link. Please confirm your email to login.", preferredStyle: .alert)
-                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                alertController.addAction(defaultAction)
-                alertController.view.tintColor = UIColor.flatWatermelonDark
-                self.present(alertController, animated: true, completion: nil)
-//                SessionManager.storeSession(session: emailLoginText)
-            } else { // an error occurred, could not successfully register
-                let alertController = UIAlertController(title: "Error", message: "An error occurred while registering. Please make sure your password is at least 6 characters long or please try again later.", preferredStyle: .alert)
-                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                alertController.addAction(defaultAction)
-                alertController.view.tintColor = UIColor.flatWatermelonDark
-                self.present(alertController, animated: true, completion: nil)
-            }
-        }
-    }
+//    @IBAction func signUpUser(_ sender: Any) {
+//        let usernameLoginText : String = usernameLogin.text!
+//        let passwordLoginText : String = passwordLogin.text!
+//        Firebase.registerUser(usernameLoginText, passwordLoginText) { success in
+//            if success { // successfully registered user, let them know to confirm email
+//                let alertController = UIAlertController(title: "Success", message: "You have been sent an email confirmation link. Please confirm your email to login.", preferredStyle: .alert)
+//                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+//                alertController.addAction(defaultAction)
+//                alertController.view.tintColor = UIColor.flatWatermelonDark
+//                self.present(alertController, animated: true, completion: nil)
+////                SessionManager.storeSession(session: emailLoginText)
+//            } else { // an error occurred, could not successfully register
+//                let alertController = UIAlertController(title: "Error", message: "An error occurred while registering. Please make sure your password is at least 6 characters long or please try again later.", preferredStyle: .alert)
+//                let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+//                alertController.addAction(defaultAction)
+//                alertController.view.tintColor = UIColor.flatWatermelonDark
+//                self.present(alertController, animated: true, completion: nil)
+//            }
+//        }
+//    }
     
     @IBAction func forgotPassword(_ sender: Any) {
         let alertError = UIAlertController(title: "Something went wrong", message: "We were unable to send your reset email. Please make sure your email is associated with an exisiting account and that you entered your email correctly.", preferredStyle: UIAlertControllerStyle.alert)

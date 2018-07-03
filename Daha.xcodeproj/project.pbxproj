@@ -10,8 +10,12 @@
 		5237643F20E31BCD00B472CD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5237643E20E31BCD00B472CD /* GoogleService-Info.plist */; };
 		5237644120E31CE300B472CD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5237644020E31CE300B472CD /* LoginViewController.swift */; };
 		5237644320E31F6B00B472CD /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5237644220E31F6B00B472CD /* Firebase.swift */; };
+		5298EE3620E549CB00B599AF /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5298EE3520E549CB00B599AF /* Models.swift */; };
+		5298EE3820E54C7400B599AF /* Current.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5298EE3720E54C7400B599AF /* Current.swift */; };
+		5298EE3A20E54F5100B599AF /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5298EE3920E54F5100B599AF /* RegisterViewController.swift */; };
+		5298EE3C20E5519800B599AF /* dahaButton1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5298EE3B20E5519800B599AF /* dahaButton1.swift */; };
 		52B15FCA20DDDF8C0004FBF1 /* MenuClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B15FC920DDDF8C0004FBF1 /* MenuClass.swift */; };
-		52B15FCC20DDE27D0004FBF1 /* MyItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B15FCB20DDE27D0004FBF1 /* MyItemsViewController.swift */; };
+		52B15FCC20DDE27D0004FBF1 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B15FCB20DDE27D0004FBF1 /* MyProfileViewController.swift */; };
 		52B15FCE20DDE28F0004FBF1 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B15FCD20DDE28F0004FBF1 /* NotificationsViewController.swift */; };
 		52B15FD020DDE29E0004FBF1 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B15FCF20DDE29E0004FBF1 /* HistoryViewController.swift */; };
 		52B15FD220DDE2AB0004FBF1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B15FD120DDE2AB0004FBF1 /* SettingsViewController.swift */; };
@@ -33,8 +37,12 @@
 		5237643E20E31BCD00B472CD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5237644020E31CE300B472CD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5237644220E31F6B00B472CD /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
+		5298EE3520E549CB00B599AF /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		5298EE3720E54C7400B599AF /* Current.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Current.swift; sourceTree = "<group>"; };
+		5298EE3920E54F5100B599AF /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		5298EE3B20E5519800B599AF /* dahaButton1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dahaButton1.swift; sourceTree = "<group>"; };
 		52B15FC920DDDF8C0004FBF1 /* MenuClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuClass.swift; sourceTree = "<group>"; };
-		52B15FCB20DDE27D0004FBF1 /* MyItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyItemsViewController.swift; sourceTree = "<group>"; };
+		52B15FCB20DDE27D0004FBF1 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		52B15FCD20DDE28F0004FBF1 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		52B15FCF20DDE29E0004FBF1 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		52B15FD120DDE2AB0004FBF1 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -98,26 +106,30 @@
 		52D4A88120DD92C300D0E362 /* Daha */ = {
 			isa = PBXGroup;
 			children = (
-				52D4A89E20DDB80700D0E362 /* SearchItemsViewController.swift */,
-				52D4A8A020DDB88C00D0E362 /* MenuViewController.swift */,
-				52D4A88220DD92C300D0E362 /* AppDelegate.swift */,
 				52D4A88620DD92C300D0E362 /* Main.storyboard */,
-				52D4A88920DD92C500D0E362 /* Assets.xcassets */,
-				52D4A88B20DD92C500D0E362 /* LaunchScreen.storyboard */,
-				52D4A88E20DD92C500D0E362 /* Info.plist */,
+				5237644020E31CE300B472CD /* LoginViewController.swift */,
+				5298EE3920E54F5100B599AF /* RegisterViewController.swift */,
+				52D4A8A020DDB88C00D0E362 /* MenuViewController.swift */,
+				52D4A89E20DDB80700D0E362 /* SearchItemsViewController.swift */,
+				52D4A8A620DDD61500D0E362 /* CategoriesViewController.swift */,
+				52B15FCB20DDE27D0004FBF1 /* MyProfileViewController.swift */,
+				52B15FCD20DDE28F0004FBF1 /* NotificationsViewController.swift */,
+				52B15FCF20DDE29E0004FBF1 /* HistoryViewController.swift */,
+				52B15FD120DDE2AB0004FBF1 /* SettingsViewController.swift */,
 				52D4A89820DD949900D0E362 /* Interactor.swift */,
 				52D4A89A20DD94D300D0E362 /* MenuHelper.swift */,
 				52D4A89C20DD958700D0E362 /* PresentMenuAnimator.swift */,
 				52D4A8A220DDBCB000D0E362 /* DismissMenuAnimator.swift */,
-				52D4A8A620DDD61500D0E362 /* CategoriesViewController.swift */,
+				5298EE3B20E5519800B599AF /* dahaButton1.swift */,
 				52B15FC920DDDF8C0004FBF1 /* MenuClass.swift */,
-				52B15FCB20DDE27D0004FBF1 /* MyItemsViewController.swift */,
-				52B15FCD20DDE28F0004FBF1 /* NotificationsViewController.swift */,
-				52B15FCF20DDE29E0004FBF1 /* HistoryViewController.swift */,
-				52B15FD120DDE2AB0004FBF1 /* SettingsViewController.swift */,
-				5237643E20E31BCD00B472CD /* GoogleService-Info.plist */,
-				5237644020E31CE300B472CD /* LoginViewController.swift */,
 				5237644220E31F6B00B472CD /* Firebase.swift */,
+				5298EE3520E549CB00B599AF /* Models.swift */,
+				5298EE3720E54C7400B599AF /* Current.swift */,
+				52D4A88220DD92C300D0E362 /* AppDelegate.swift */,
+				52D4A88B20DD92C500D0E362 /* LaunchScreen.storyboard */,
+				52D4A88E20DD92C500D0E362 /* Info.plist */,
+				5237643E20E31BCD00B472CD /* GoogleService-Info.plist */,
+				52D4A88920DD92C500D0E362 /* Assets.xcassets */,
 			);
 			path = Daha;
 			sourceTree = "<group>";
@@ -268,16 +280,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				5237644120E31CE300B472CD /* LoginViewController.swift in Sources */,
+				5298EE3820E54C7400B599AF /* Current.swift in Sources */,
 				52B15FCA20DDDF8C0004FBF1 /* MenuClass.swift in Sources */,
 				52D4A88320DD92C300D0E362 /* AppDelegate.swift in Sources */,
 				52D4A89920DD949900D0E362 /* Interactor.swift in Sources */,
 				52B15FD020DDE29E0004FBF1 /* HistoryViewController.swift in Sources */,
-				52B15FCC20DDE27D0004FBF1 /* MyItemsViewController.swift in Sources */,
+				52B15FCC20DDE27D0004FBF1 /* MyProfileViewController.swift in Sources */,
 				52D4A8A120DDB88C00D0E362 /* MenuViewController.swift in Sources */,
+				5298EE3C20E5519800B599AF /* dahaButton1.swift in Sources */,
 				52D4A8A320DDBCB000D0E362 /* DismissMenuAnimator.swift in Sources */,
 				52D4A89D20DD958700D0E362 /* PresentMenuAnimator.swift in Sources */,
 				52D4A89B20DD94D300D0E362 /* MenuHelper.swift in Sources */,
 				5237644320E31F6B00B472CD /* Firebase.swift in Sources */,
+				5298EE3A20E54F5100B599AF /* RegisterViewController.swift in Sources */,
+				5298EE3620E549CB00B599AF /* Models.swift in Sources */,
 				52B15FCE20DDE28F0004FBF1 /* NotificationsViewController.swift in Sources */,
 				52B15FD220DDE2AB0004FBF1 /* SettingsViewController.swift in Sources */,
 				52D4A8A720DDD61500D0E362 /* CategoriesViewController.swift in Sources */,
@@ -429,7 +445,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9RTJ28U92J;
 				INFOPLIST_FILE = Daha/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = tvjensen.Daha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -445,7 +464,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9RTJ28U92J;
 				INFOPLIST_FILE = Daha/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = tvjensen.Daha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

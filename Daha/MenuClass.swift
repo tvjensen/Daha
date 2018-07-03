@@ -26,9 +26,6 @@ class MenuClass: UIViewController, UIViewControllerTransitioningDelegate {
             let selected = self.selected
             secondViewController.selected = selected
         }
-//        let secondViewController = segue.destination as! MenuViewController
-//        let selected = self.selected
-//        secondViewController.selected = selected
     }
     
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {

@@ -12,16 +12,18 @@ import Foundation
 class MenuViewController: UIViewController {
     
     var selected = "search"
-    @IBOutlet weak var userName: UILabel!
-    @IBOutlet weak var userImage: UIImageView!
+    
+    @IBOutlet weak var userImage: UIButton!
+    @IBOutlet weak var userName: UIButton!
     @IBOutlet weak var searchItemsButton: UIButton!
     @IBOutlet weak var categoriesButton: UIButton!
-    @IBOutlet weak var myItemsButton: UIButton!
+    @IBOutlet weak var myProfileButton: UIButton!
     @IBOutlet weak var notificationsButton: UIButton!
     @IBOutlet weak var historyButton: UIButton!
     @IBOutlet weak var settingsButton: UIButton!
     
     override func viewDidLoad() {
+        userName.setTitle((Current.user?.firstName)! + " " + (Current.user?.lastName)!, for: .normal)
         setSelected()
     }
     
@@ -33,8 +35,8 @@ class MenuViewController: UIViewController {
         case "categories":
             categoriesButton.isSelected = true
             break
-        case "myItems":
-            myItemsButton.isSelected = true
+        case "myProfile":
+            myProfileButton.isSelected = true
             break
         case "notifications":
             notificationsButton.isSelected = true

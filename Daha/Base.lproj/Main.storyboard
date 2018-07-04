@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FLK-sT-ttg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sSV-VV-jYJ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -188,7 +188,7 @@
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csi-0p-Q9g">
                                         <rect key="frame" x="60" y="489" width="120" height="60"/>
@@ -220,11 +220,10 @@
                                         </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="emailAddress" textContentType="email"/>
+                                        <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="emailAddress" enablesReturnKeyAutomatically="YES" textContentType="email"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="daha!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bn0-bb-WaP">
-                                        <rect key="frame" x="117" y="209" width="143" height="60"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="daha!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bn0-bb-WaP">
+                                        <rect key="frame" x="116" y="200" width="143" height="60"/>
                                         <fontDescription key="fontDescription" type="system" weight="black" pointSize="50"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -272,6 +271,7 @@
                                 <color key="backgroundColor" red="0.8912609816" green="0.35455638169999998" blue="0.39968371390000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="pdW-k3-LhM" firstAttribute="centerX" secondItem="50L-9b-pXe" secondAttribute="centerX" id="6BG-1R-8KJ"/>
+                                    <constraint firstItem="bn0-bb-WaP" firstAttribute="centerX" secondItem="50L-9b-pXe" secondAttribute="centerX" id="CQg-Vz-c5l"/>
                                     <constraint firstItem="pdW-k3-LhM" firstAttribute="top" secondItem="s1f-wC-3rU" secondAttribute="bottom" constant="70" id="KIM-ej-GPi"/>
                                     <constraint firstItem="X8w-Pl-PJy" firstAttribute="centerX" secondItem="50L-9b-pXe" secondAttribute="centerX" id="Qrm-W8-DTl"/>
                                     <constraint firstItem="pdW-k3-LhM" firstAttribute="top" secondItem="csi-0p-Q9g" secondAttribute="bottom" constant="70" id="UJd-wP-vou"/>
@@ -279,6 +279,7 @@
                                     <constraint firstItem="csi-0p-Q9g" firstAttribute="centerX" secondItem="50L-9b-pXe" secondAttribute="centerX" constant="-67.5" id="Vhn-hF-XQA"/>
                                     <constraint firstItem="s1f-wC-3rU" firstAttribute="centerX" secondItem="50L-9b-pXe" secondAttribute="centerX" constant="67.5" id="blP-ka-lcw"/>
                                     <constraint firstItem="s1f-wC-3rU" firstAttribute="top" secondItem="6A3-MT-6xd" secondAttribute="bottom" constant="35" id="laI-Et-AEv"/>
+                                    <constraint firstItem="bn0-bb-WaP" firstAttribute="top" secondItem="50L-9b-pXe" secondAttribute="top" constant="200" id="nUM-QA-msy"/>
                                     <constraint firstItem="6A3-MT-6xd" firstAttribute="centerX" secondItem="50L-9b-pXe" secondAttribute="centerX" id="nrV-z5-9S0"/>
                                     <constraint firstAttribute="bottom" secondItem="pdW-k3-LhM" secondAttribute="bottom" constant="8" id="slj-Z2-zzl"/>
                                     <constraint firstItem="6A3-MT-6xd" firstAttribute="top" secondItem="X8w-Pl-PJy" secondAttribute="bottom" constant="10" id="vCt-2W-fhW"/>
@@ -512,21 +513,25 @@
                                     <constraint firstItem="MIU-Bf-bal" firstAttribute="centerX" secondItem="lpU-kz-8GO" secondAttribute="centerX" id="rtu-r8-j3t"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="p90-Pt-ihd">
+                            <button clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="p90-Pt-ihd">
                                 <rect key="frame" x="15" y="78" width="180" height="180"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="8b4-Kd-kfy"/>
                                     <constraint firstAttribute="height" constant="180" id="vb2-jU-9dO"/>
                                 </constraints>
-                                <state key="normal" title="Add profile image">
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <state key="normal" image="anonymous-user-white">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <integer key="value" value="45"/>
+                                        <integer key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addImage:" destination="sSV-VV-jYJ" eventType="touchUpInside" id="W4m-5h-XB9"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MPG-8R-VLt">
                                 <rect key="frame" x="210" y="85" width="150" height="30"/>
@@ -1055,14 +1060,14 @@
                                     <segue destination="ewy-8b-YwU" kind="show" animates="NO" id="6hp-Kq-GQi"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ng4-u3-lkY">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ng4-u3-lkY">
                                 <rect key="frame" x="25" y="40" width="120" height="120"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="Bsn-iO-pfU"/>
                                     <constraint firstAttribute="width" constant="120" id="EdG-Jo-g7M"/>
                                 </constraints>
-                                <state key="normal" title="Add profile image">
+                                <state key="normal" title="Add profile image" image="None">
                                     <color key="titleColor" red="0.78738981490000004" green="0.2464441359" blue="0.27221894260000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -1155,10 +1160,14 @@
             <point key="canvasLocation" x="-359" y="-484"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="None" width="16" height="16"/>
+        <image name="anonymous-user-white" width="100" height="100"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Whf-Wq-VYc"/>
+        <segue reference="b2a-cT-Pj9"/>
         <segue reference="VWa-Ht-f4o"/>
-        <segue reference="Yi3-vJ-pVT"/>
+        <segue reference="dyF-C1-G2v"/>
         <segue reference="n7S-sn-uju"/>
     </inferredMetricsTieBreakers>
 </document>

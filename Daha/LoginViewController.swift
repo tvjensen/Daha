@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import ChameleonFramework
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var emailLogin: UITextField!
     @IBOutlet weak var passwordLogin: UITextField!
@@ -24,6 +24,17 @@ class LoginViewController: UIViewController {
         forgotPasswordButton.titleLabel?.textAlignment = NSTextAlignment.center
         self.view.backgroundColor = UIColor.flatWatermelon
         passwordLogin.isSecureTextEntry = true
+        emailLogin.delegate = self
+        passwordLogin.delegate = self
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 
     override func didReceiveMemoryWarning() {

@@ -21,6 +21,7 @@ class Models {
 //        var username: String
         var postedItems: [String: Any] = [:]
         var postedRequests: [String: Any] = [:]
+        var imageURL: String
 
         var firebaseDict: [String : Any] {
             let dict: [String: Any] = [
@@ -28,7 +29,8 @@ class Models {
                 "firstName": self.firstName,
                 "lastName": self.lastName,
                 "postedItems": self.postedItems,
-                "postedRequests": self.postedRequests
+                "postedRequests": self.postedRequests,
+                "imageURL": self.imageURL
             ]
             return dict
         }
@@ -40,6 +42,7 @@ class Models {
             self.email = email
             self.firstName = dict["firstName"] as! String
             self.lastName = dict["lastName"] as! String
+            self.imageURL = dict["imageURL"] as! String
 //            self.username = (dict["username"] as? String)!
         }
         

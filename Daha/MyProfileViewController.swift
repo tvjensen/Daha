@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseStorage
 
 class MyProfileViewController: MenuClass {
     
@@ -29,11 +30,44 @@ class MyProfileViewController: MenuClass {
         }
     }
     
+    @IBAction func addImage(_ sender: Any) {
+        CameraHandler.shared.showActionSheet(vc: self)
+        CameraHandler.shared.imagePickedBlock = { (image) in
+            self.userImage.imageView?.contentMode = UIViewContentMode.scaleAspectFill
+            self.userImage.setImage(image, for: .normal)
+            self.dismiss(animated: true, completion: nil)
+            var data = NSData()
+            data = UIImageJPEGRepresentation(image, 1.0)! as NSData
+            // set upload path
+            let filePath = "\((Current.user?.email)!)/\("profileImage")"
+            let metadata = StorageMetadata()
+            metadata.cacheControl = "public,max-age=300";
+            metadata.contentType = "image/jpeg";
+            Firebase.addImage(filePath: filePath, data: data, metadata: metadata) { (success) in
+                if success {
+                    print("Image saved")
+                }
+            }
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        var dict = ["email" : "tvjensen96@gmail.com".replacingOccurrences(of: ".", with: ","),
+                    "firstName" : "Thomas",
+                    "lastName" : "Jensen",
+                    "imageURL" : "https://firebasestorage.googleapis.com/v0/b/daha-d3131.appspot.com/o/images%2Ftvjensen96@gmail,com%2FprofileImage?alt=media&token=1696210d-d3b6-426f-a6d9-ad0065cb60e1"]
+        Current.user = Models.User(dict: dict)
         
         firstNameField.text = Current.user?.firstName
         lastNameField.text = Current.user?.lastName
+        
+        Firebase.fetchProfileImage() { (image) in
+            self.userImage.imageView?.contentMode = UIViewContentMode.scaleAspectFill
+            self.userImage.setImage(image, for: .normal)
+        }
+        
         
         
         //Configure the button

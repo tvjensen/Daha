@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Register: UIViewController {
+class Register: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var firstNameField: UITextField!
     @IBOutlet weak var lastNameField: UITextField!
@@ -23,6 +23,21 @@ class Register: UIViewController {
     override func viewDidLoad() {
         infoMessage.textColor = UIColor.white
         infoMessage.text = " "
+        firstNameField.delegate = self
+        lastNameField.delegate = self
+        emailField.delegate = self
+        passwordField.delegate = self
+        retypePassField.delegate = self
+        usernameField.delegate = self
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     @IBAction func checkUsername() {
@@ -82,7 +97,8 @@ class Register: UIViewController {
         let passwordLoginText : String = passwordField.text!
         let firstNameText : String = firstNameField.text!
         let lastNameText : String = lastNameField.text!
-        Firebase.registerUser(emailLoginText, passwordLoginText, firstNameText, lastNameText) { success in
+        var imageID : String = ""
+        Firebase.registerUser(emailLoginText, passwordLoginText, firstNameText, lastNameText, imageID) { success in
             if success { // successfully registered user, let them know to confirm email
                 let alertController = UIAlertController(title: "Success", message: "You have been sent an email confirmation link. Please confirm your email to login.", preferredStyle: .alert)
                 alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: { [weak alertController] (_) in
@@ -96,7 +112,9 @@ class Register: UIViewController {
                 let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                 alertController.addAction(defaultAction)
                 alertController.view.tintColor = UIColor.flatWatermelonDark
-                self.present(alertController, animated: true, completion: nil)
+                self.infoMessage.text = "Error. This email may already by registered to an account. Please make sure your password is at least 6 characters long as well."
+                self.infoMessage.textColor = UIColor.red
+//                self.present(alertController, animated: true, completion: nil)
             }
         }
     }

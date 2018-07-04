@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseStorage
 
-class MyProfileViewController: MenuClass {
+class MyProfileViewController: MenuClass, UITextFieldDelegate {
     
     var filterButton = dropDownBtn()
     @IBOutlet weak var firstNameField: UITextField!
@@ -17,15 +17,16 @@ class MyProfileViewController: MenuClass {
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var userImage: UIButton!
     @IBOutlet weak var yourItemsLabel: UILabel!
+    @IBOutlet weak var saveButton: UIButton!
+    
     
     @IBAction func saveInfo(_ sender: Any) {
         if firstNameField.text != Current.user?.firstName || lastNameField.text != Current.user?.lastName {
             print("save hit")
+            saveButton.backgroundColor = UIColor.lightGray
             var updatedUser = Current.user
             updatedUser?.firstName = firstNameField.text!
             updatedUser?.lastName = lastNameField.text!
-//            updatedUser.username = usernameField.text
-//            updatedUser.image = userImage.currentBackgroundImage
             Firebase.updateCurrentUser(user: updatedUser!)
         }
     }
@@ -54,21 +55,19 @@ class MyProfileViewController: MenuClass {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var dict = ["email" : "tvjensen96@gmail.com".replacingOccurrences(of: ".", with: ","),
-                    "firstName" : "Thomas",
-                    "lastName" : "Jensen",
-                    "imageURL" : "https://firebasestorage.googleapis.com/v0/b/daha-d3131.appspot.com/o/images%2Ftvjensen96@gmail,com%2FprofileImage?alt=media&token=1696210d-d3b6-426f-a6d9-ad0065cb60e1"]
-        Current.user = Models.User(dict: dict)
         
         firstNameField.text = Current.user?.firstName
+        firstNameField.delegate = self
+        firstNameField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        lastNameField.delegate = self
         lastNameField.text = Current.user?.lastName
+        lastNameField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        
         
         Firebase.fetchProfileImage() { (image) in
             self.userImage.imageView?.contentMode = UIViewContentMode.scaleAspectFill
             self.userImage.setImage(image, for: .normal)
         }
-        
-        
         
         //Configure the button
         filterButton = dropDownBtn.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
@@ -86,6 +85,23 @@ class MyProfileViewController: MenuClass {
         
         //Set the drop down menu's options
         filterButton.dropView.dropDownOptions = ["Time","Price", "ABC"]
+    }
+
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        if firstNameField.text != Current.user?.firstName || lastNameField.text != Current.user?.lastName {
+            saveButton.backgroundColor = UIColor.flatWatermelonDark
+        } else {
+            saveButton.backgroundColor = UIColor.lightGray
+        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     override func didReceiveMemoryWarning() {

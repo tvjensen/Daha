@@ -78,8 +78,6 @@ class Firebase {
                                         "lastName": lastName,
                                         "imageURL": imageURL,]
                             self.usersRef.child(validEmailLoginText.lowercased()).setValue(dict) // update email for this user in the db
-//                            dict["email"] = emailLoginText
-//                            Current.user = Models.User(dict: dict)
                             callback(true)
                         }
                     })
@@ -120,7 +118,6 @@ class Firebase {
                 //store downloadURL
                 let downloadURL = metaData!.downloadURL()!.absoluteString
                 //store downloadURL at database
-                print((Current.user?.email)!)
                 self.usersRef.child((Current.user?.email)!).updateChildValues(["imageURL": downloadURL])
                 callback(true)
             }
@@ -129,17 +126,14 @@ class Firebase {
     }
     
     public static func fetchProfileImage(callback: @escaping(UIImage) -> Void) {
-        print((Current.user?.email)!)
         usersRef.child((Current.user?.email)!).observeSingleEvent(of: .value, with: { (snapshot) in
             // check if user has photo
             let value = snapshot.value as? NSDictionary
-            print(value!["imageURL"] as! String)
             if value!["imageURL"] as! String != "" {
                 // set image locatin
                 let filePath = "\((Current.user?.email)!)/\("profileImage")"
                 // Assuming a < 10MB file, though you can change that
                 imagesRef.child(filePath).getData(maxSize: 10*1024*1024, completion: { (data, error) in
-                    print(data)
                     if (data != nil) {
                         let userPhoto = UIImage(data: data!)
                         callback(userPhoto!)

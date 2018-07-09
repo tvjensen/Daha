@@ -267,6 +267,10 @@
                                             <segue destination="r8q-Dh-MiL" kind="presentation" id="M49-2j-lQ5"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8QA-dN-4hA" customClass="FBSDKLoginButton">
+                                        <rect key="frame" x="133" y="579" width="108" height="30"/>
+                                        <state key="normal" title="Facebook Login"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.8912609816" green="0.35455638169999998" blue="0.39968371390000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -279,8 +283,10 @@
                                     <constraint firstItem="csi-0p-Q9g" firstAttribute="centerX" secondItem="50L-9b-pXe" secondAttribute="centerX" constant="-67.5" id="Vhn-hF-XQA"/>
                                     <constraint firstItem="s1f-wC-3rU" firstAttribute="centerX" secondItem="50L-9b-pXe" secondAttribute="centerX" constant="67.5" id="blP-ka-lcw"/>
                                     <constraint firstItem="s1f-wC-3rU" firstAttribute="top" secondItem="6A3-MT-6xd" secondAttribute="bottom" constant="35" id="laI-Et-AEv"/>
+                                    <constraint firstItem="8QA-dN-4hA" firstAttribute="centerX" secondItem="50L-9b-pXe" secondAttribute="centerX" id="lib-Lg-0Cb"/>
                                     <constraint firstItem="bn0-bb-WaP" firstAttribute="top" secondItem="50L-9b-pXe" secondAttribute="top" constant="200" id="nUM-QA-msy"/>
                                     <constraint firstItem="6A3-MT-6xd" firstAttribute="centerX" secondItem="50L-9b-pXe" secondAttribute="centerX" id="nrV-z5-9S0"/>
+                                    <constraint firstItem="pdW-k3-LhM" firstAttribute="top" secondItem="8QA-dN-4hA" secondAttribute="bottom" constant="10" id="q8I-7U-BEC"/>
                                     <constraint firstAttribute="bottom" secondItem="pdW-k3-LhM" secondAttribute="bottom" constant="8" id="slj-Z2-zzl"/>
                                     <constraint firstItem="6A3-MT-6xd" firstAttribute="top" secondItem="X8w-Pl-PJy" secondAttribute="bottom" constant="10" id="vCt-2W-fhW"/>
                                     <constraint firstItem="s1f-wC-3rU" firstAttribute="centerX" secondItem="50L-9b-pXe" secondAttribute="centerX" constant="67.5" id="vYe-Vu-bWn"/>
@@ -299,6 +305,7 @@
                     <navigationItem key="navigationItem" id="FtI-ka-VCa"/>
                     <connections>
                         <outlet property="emailLogin" destination="X8w-Pl-PJy" id="URH-i2-xpE"/>
+                        <outlet property="facebookLoginButton" destination="8QA-dN-4hA" id="pC7-eB-RqL"/>
                         <outlet property="forgotPasswordButton" destination="pdW-k3-LhM" id="qcZ-4Y-brK"/>
                         <outlet property="loginButton" destination="csi-0p-Q9g" id="gCX-wh-G3z"/>
                         <outlet property="passwordLogin" destination="6A3-MT-6xd" id="VQD-j5-U8Q"/>
@@ -1168,7 +1175,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="b2a-cT-Pj9"/>
         <segue reference="VWa-Ht-f4o"/>
-        <segue reference="dyF-C1-G2v"/>
+        <segue reference="Yi3-vJ-pVT"/>
         <segue reference="n7S-sn-uju"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -11,5 +11,6 @@ target 'Daha' do
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
-
+  pod 'FBSDKLoginKit'
+  pod 'FacebookCore'
 end

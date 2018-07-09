@@ -9,8 +9,11 @@
 import UIKit
 import Firebase
 import ChameleonFramework
+import FBSDKLoginKit
+import FacebookCore
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+
+class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButtonDelegate {
 
     @IBOutlet weak var emailLogin: UITextField!
     @IBOutlet weak var passwordLogin: UITextField!
@@ -18,6 +21,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var forgotPasswordButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
+    
+    var facebookLoggedIn = false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +33,39 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         passwordLogin.isSecureTextEntry = true
         emailLogin.delegate = self
         passwordLogin.delegate = self
+        facebookLoginButton.delegate = self
+        facebookLoginButton.readPermissions = ["public_profile", "email"]
+        if let accessToken = FBSDKAccessToken.current() {
+            facebookLoggedIn = true
+        }
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        print("Did logout of Facebook.")
+    }
+    
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        if error != nil {
+            print(error.localizedDescription)
+            return
+        }
+        
+        let connection = GraphRequestConnection()
+        connection.add(GraphRequest(graphPath: "/me", parameters: ["fields": "id, first_name, last_name, picture, email"])) { httpResponse, result in
+            switch result {
+            case .success(let response):
+                print("Graph Request Succeeded: \(response)")
+                Firebase.loginFacebookUser(loggedIn: self.facebookLoggedIn, fbResponse: response) { (success) in
+                    if success {
+                        print("Successfully logged in with Facebook.")
+                        self.performSegue(withIdentifier: "successfulLogin", sender: nil)
+                    }
+                }
+            case .failed(let error):
+                print("Graph Request Failed: \(error)")
+            }
+        }
+        connection.start()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

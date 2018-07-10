@@ -123,6 +123,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kcb-bB-4Q6">
+                                <rect key="frame" x="16" y="32" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="0.78738981490000004" green="0.2464441359" blue="0.27221894260000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="IDL-8N-OQ7" kind="presentation" id="gvD-fQ-W52"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -1159,6 +1169,6 @@
         <segue reference="Whf-Wq-VYc"/>
         <segue reference="VWa-Ht-f4o"/>
         <segue reference="Yi3-vJ-pVT"/>
-        <segue reference="n7S-sn-uju"/>
+        <segue reference="gvD-fQ-W52"/>
     </inferredMetricsTieBreakers>
 </document>

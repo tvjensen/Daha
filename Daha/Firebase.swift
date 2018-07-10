@@ -102,8 +102,11 @@ class Firebase {
         }
     }
     
-    //TODO - user 'activityRef' defined above
-    public static func saveActivity(activity: Models.Activity) {
+    public static func saveActivity(email: String) {
+        let dict = ["email":email,
+                    "time":currentTime] as [String : Any]
+        let newRef = activitiesRef.childByAutoId()
+        newRef.setValue(dict)
         
     }
     

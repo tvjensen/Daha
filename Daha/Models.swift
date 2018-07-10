@@ -101,30 +101,30 @@ class Models {
     }
     
     struct Activity {
-        var activityID: String
+//        var activityID: String
         var time: Double
-        var type: String // postReq / removeReq / postItem / removeItem / sentReq / borrowed / returned
+//        var type: String // postReq / removeReq / postItem / removeItem / sentReq / borrowed / returned
         var email: String
-        var otherUserEmail: String
+//        var otherUserEmail: String
 //        var image:  //TODO once i get around to figuring out images
         
         var firebaseDict: [String : Any] {
             let dict: [String : Any] = [
                 "time": self.time,
-                "type": self.type,
+//                "type": self.type,
                 "email": self.email,
-                "otherUserEmail": self.otherUserEmail
+//                "otherUserEmail": self.otherUserEmail
             ]
             return dict
         }
         
         init?(dict: [String: Any?]) {
-            guard let activityID = dict["activityID"] as? String else { return nil }
-            self.activityID = activityID
+//            guard let activityID = dict["activityID"] as? String else { return nil }
+//            self.activityID = activityID
             self.time = dict["time"] as! Double
-            self.type = dict["type"] as! String
+//            self.type = dict["type"] as! String
             self.email = dict["email"] as! String
-            self.otherUserEmail = dict["otherUserEmail"] as! String
+//            self.otherUserEmail = dict["otherUserEmail"] as! String
         }
     }
 }

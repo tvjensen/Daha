@@ -35,9 +35,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
         passwordLogin.delegate = self
         facebookLoginButton.delegate = self
         facebookLoginButton.readPermissions = ["public_profile", "email"]
-        if let accessToken = FBSDKAccessToken.current() {
-            facebookLoggedIn = true
-        }
+//        if let accessToken = FBSDKAccessToken.current() {
+//            facebookLoggedIn = true
+//        }
     }
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
@@ -49,23 +49,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate, FBSDKLoginButt
             print(error.localizedDescription)
             return
         }
-        
-        let connection = GraphRequestConnection()
-        connection.add(GraphRequest(graphPath: "/me", parameters: ["fields": "id, first_name, last_name, picture, email"])) { httpResponse, result in
-            switch result {
-            case .success(let response):
-                print("Graph Request Succeeded: \(response)")
-                Firebase.loginFacebookUser(loggedIn: self.facebookLoggedIn, fbResponse: response) { (success) in
-                    if success {
-                        print("Successfully logged in with Facebook.")
-                        self.performSegue(withIdentifier: "successfulLogin", sender: nil)
-                    }
+        if FBSDKAccessToken.current() != nil {
+            Firebase.loginFacebookUser()  { success in
+                if success {
+                    print("Successfully logged in with Facebook.")
+                    self.performSegue(withIdentifier: "successfulLogin", sender: nil)
                 }
-            case .failed(let error):
-                print("Graph Request Failed: \(error)")
             }
         }
-        connection.start()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

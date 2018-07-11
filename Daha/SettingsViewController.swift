@@ -10,9 +10,9 @@ import UIKit
 
 class SettingsViewController: MenuClass {
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
     }
     
@@ -20,13 +20,15 @@ class SettingsViewController: MenuClass {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     @IBAction func logout(_ sender: Any) {
         let alert = UIAlertController(title: "Log Out", message: "Are you sure that you want to log out?", preferredStyle: UIAlertControllerStyle.alert)
         
         alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: { [weak alert] (_) in
 //            SessionManager.refreshState()
-            self.performSegue(withIdentifier: "backToLoginSegue", sender: nil)
+            Firebase.logoutFacebookUser()
             Current.user = nil
+            self.performSegue(withIdentifier: "backToLoginSegue", sender: nil)
         }))
         alert.addAction(UIAlertAction(title: "Nevermind", style: UIAlertActionStyle.default, handler: { [weak alert] (_) in
             //do nothing

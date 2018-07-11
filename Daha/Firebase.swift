@@ -54,47 +54,55 @@ class Firebase {
         }
     }
     
-    public static func loginFacebookUser(loggedIn: Bool, fbResponse: GraphResponse, callback: @escaping (Bool) -> Void) {
+    public static func loginFacebookUser(callback: @escaping (Bool) -> Void) {
+        let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
 
-        let email = fbResponse.dictionaryValue!["email"] as! String
-        let validEmailLoginText = email.replacingOccurrences(of: ".", with: ",")
-        let firstName = fbResponse.dictionaryValue!["first_name"] as! String
-        let lastName = fbResponse.dictionaryValue!["last_name"] as! String
-        let imageObject = fbResponse.dictionaryValue!["picture"]! as AnyObject
-        let imageData = imageObject["data"] as AnyObject
-        let imageURL = imageData["url"] as! String
-
-        usersRef.child("\(validEmailLoginText)").observeSingleEvent(of: .value, with: {(snapshot: DataSnapshot) in
-            if snapshot.exists() {
-                Current.user = Models.User(snapshot: snapshot) // get user metadata from DB
-                // SessionManager.storeSession(session: validEmailLoginText) // store sesh to stay logged in
-                callback(true)
-            } else {
-                var dict = ["email": validEmailLoginText,
-                            "firstName": firstName,
-                            "lastName": lastName,
-                            "imageURL": imageURL,]
-                self.usersRef.child(validEmailLoginText.lowercased()).setValue(dict) // update email for this user in the db
-                Current.user = Models.User(dict: dict)
-                // SessionManager.storeSession(session: validEmailLoginText) // store sesh to stay logged in
-                callback(true)
+        Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
+            if error != nil {
+                print(error.debugDescription)
+                print(error?.localizedDescription)
             }
-        })
-
-//        let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-//        Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
-//            if error != nil {
-//                print(error?.localizedDescription)
-//                callback(false)
-//            }
-//            // User is signed in
-//            // ...
-//            print("ERROR:")
-//            print(error?.localizedDescription)
-//            print(authResult)
-//            print(credential)
-//            callback(true)
-//        }
+            callback(true)
+            let connection = GraphRequestConnection()
+            connection.add(GraphRequest(graphPath: "/me", parameters: ["fields": "id, first_name, last_name, picture, email"])) { httpResponse, result in
+                switch result {
+                case .success(let response):
+                    print("Graph Request Succeeded: \(response)")
+                    let email = response.dictionaryValue!["email"] as! String
+                    let validEmailLoginText = email.replacingOccurrences(of: ".", with: ",")
+                    let firstName = response.dictionaryValue!["first_name"] as! String
+                    let lastName = response.dictionaryValue!["last_name"] as! String
+                    let imageObject = response.dictionaryValue!["picture"]! as AnyObject
+                    let imageData = imageObject["data"] as AnyObject
+                    let imageURL = imageData["url"] as! String
+                    
+                    usersRef.child("\(validEmailLoginText)").observeSingleEvent(of: .value, with: {(snapshot: DataSnapshot) in
+                        if snapshot.exists() {
+                            Current.user = Models.User(snapshot: snapshot) // get user metadata from DB
+                            // SessionManager.storeSession(session: validEmailLoginText) // store sesh to stay logged in
+                        } else {
+                            var dict = ["email": validEmailLoginText,
+                                        "firstName": firstName,
+                                        "lastName": lastName,
+                                        "imageURL": imageURL,]
+                            self.usersRef.child(validEmailLoginText.lowercased()).setValue(dict) // update email for this user in the db
+                            Current.user = Models.User(dict: dict)
+                            // SessionManager.storeSession(session: validEmailLoginText) // store sesh to stay logged in
+                        }
+                    })
+//                    callback(true)
+                case .failed(let error):
+                    print("Graph Request Failed: \(error)")
+                    callback(false)
+                }
+            }
+            connection.start()
+        }
+    }
+    
+    public static func logoutFacebookUser() {
+        let loginManager = FBSDKLoginManager()
+        loginManager.logOut()
     }
     
     /* Registers user by creating a user instance in both the Firebase Auth and database.
